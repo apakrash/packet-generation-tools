@@ -1,41 +1,50 @@
+#phase: Ubuntu tested, LL test pending
 
 
-from urllib import response
-from scapy.all import scapy
-from scapy.all import IP
-from scapy.all import ICMP
 from scapy.all import *
 
-'''The sr() function is used to send a packet or group of packets when you expect a response back.'''
 
-#response= sr(IP(dst="10.197.223.121")/ICMP())
-#print(response.summary())
+############ Section 1 sr() ############
 
-'''The sr1() function is fire and forget'''
+#The sr() function is used to send a packet or group of packets when you expect a response back.'''
 
 
-#response= sr1(IP(dst="10.197.223.121")/ICMP())
-#print(response.summary())
-
-
-
-''''If there is a 'p' at the end, then an L2 packet is being sent''' # this is still in progress
-
-#srp
-
-#response= srp(IP(dst="10.197.223.121")/ICMP())
-#print(response.summary())
+#response_sr = sr(IP(dst="1.1.1.1")/ICMP())
+#print(response_sr)
+# wrpcap("response_sr.pcap", response_sr) # this will throw an error
 
 
 
-#srp1
+############ Section 2 sr1() ############
 
-#response= srp1(IP(dst="10.197.223.121")/ICMP())
-#print(response.summary())
+#The sr2() function for getting 1 response packet back'''
+
+#response_sr1 = sr1(IP(dst="1.1.1.1")/ICMP())
+#print(response_sr1.summary())
+#wrpcap("response_sr1.pcap", response_sr1)
+
+# Notice that the response can be saved in response_sr1.pcap. There is a sample response_sr1-sample.pcap present to check
+# To check the file, please use tcdump -r response_sr1.pcap or tcpdump -r response_sr1-sample.pcap  ## use sudo if normal tcpdump is not working
 
 
-#srloop() | the name says it
 
-response = srloop(IP(dst="10.197.223.121")/ICMP(), count=2)   #----> this is not working
-print(dir(response))
-print(response.index())
+############ Section 3 srloop() ############
+
+#response_srloop = srloop(IP(dst="1.1.1.1")/ICMP(), count=2)   
+#print(response_srloop)
+
+
+
+############ Section 4 srp() ############
+
+''''If there is a 'p' at the end, then an L2 packet is being sent''' 
+
+# get the output of interface using the command: ip a s and put it in the variable below
+iface = 'ens192'
+
+ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff") / ARP(pdst='1.1.1.1'), timeout=3, iface=iface)
+print(ans.summary()) # gateway's ip address
+wrpcap("srp_response.pcap", ans)
+
+# Notice that the response is saved in srp_response.pcap. There is a sample srp_response-sample.pcap present to check
+# To check the file, please use tcdump -r srp_response.pcap or tcpdump -r srp_response.pcap.pcap  ## use sudo if normal tcpdump is not working
