@@ -1,4 +1,4 @@
-#phase: local test pass | to check on LL2.0
+#phase: Ubutntu done | to check on LL2.0
 
 from scapy.all import *
 import ipaddress # good library to work on ipaddresshandling
@@ -24,10 +24,13 @@ wrpcap("syn-scap.pcap", response)
 # this is not working
 ip_address = ipaddress.IPv4Address('1.1.1.1')
 print(ip_address)
-for ip_address in range(1,5):
-    response= (sr1(IP(dst=str(ip_address))/TCP(dport=443,flags="S")))
+print(type(str(ip_address)))
+print(int(ip_address))
+for i in range(5):
+    #time.wait(2)
+    print('TCP SYN scap for '+ str(ip_address))
+    ip = str(ip_address)
+    response= sr1(IP(dst=ip)/TCP(dport=443,flags="S")) # dont use str(ip_address) in this line, it breaks
     print(response.show())
     ip_address += 1
-    time.wait(2)
-
-
+    

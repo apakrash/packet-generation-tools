@@ -1,7 +1,7 @@
 #Phase: Not yet working as expected
 #the terminal becomes un-killable
 
-https://medium.datadriveninvestor.com/arp-cache-poisoning-using-scapy-d6711ecbe112
+#https://medium.datadriveninvestor.com/arp-cache-poisoning-using-scapy-d6711ecbe112
 
 from scapy.all import *
 

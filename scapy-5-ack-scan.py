@@ -10,11 +10,9 @@ from scapy.all import *
 
 #A noticed anomaly is that sr1 waits for the packet
 
-response= (sr(IP(dst="10.197.225.120")/TCP(dport=443,flags="A")))
+response= (sr(IP(dst="1.1.1.1")/TCP(dport=443,flags="A")))
 
 
-print(dir(response))
+#print(dir(response))
 #print(response.packetfields())
-print(response.summary())
-print(response.show())
-print(response.show2())
+print(response)
