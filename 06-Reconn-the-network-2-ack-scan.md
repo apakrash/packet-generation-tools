@@ -1,0 +1,174 @@
+# Recon [Continued]
+
+![image](https://wwwin-github.cisco.com/storage/user/37778/files/78188188-e7c8-4f75-a44b-29e5f76fa046)
+
+## ACK Scan
+
+In the previous instance, we used the `flags='S'` for sending out TCP syn, now just chaging this parameter, an ack scan can be done for the network using `flags='A'`
+`sr1(IP(dst=ip)/TCP(dport=443,flags="S"))` is used to send a syn packet, notice how the tcp flags can be controlled with this. Changing the ip address on each iteration in `dst` lets you scan the entire subnet with this line.
+
+## Run the code
+
+### Terminal 1
+On one terminal, please find the interface being used by your machine/docker image using:
+```
+ip a s
+```
+```
+1: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:bd:05:0a brd ff:ff:ff:ff:ff:ff
+    altname enp11s0
+    inet 10.105.130.21/24 brd 10.105.130.255 scope global noprefixroute ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::eaf4:d84d:8cca:dbe6/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+```
+
+Here the interface is `ens192`.
+
+Now run the tcpdump command using:
+
+```
+tcpdump -nni ens192 -s0  net 1.1.1.0/24
+```
+
+or if the above throws an error/permission issue:
+
+```
+sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+```
+
+### Terminal 2
+
+On another termninal, run the code:
+
+```
+python3 scapy-5-ack-scan.py
+```
+
+or if the above throws an error/permission issue:
+
+```
+sudo python3 scapy-5-ack-scan.py
+```
+
+
+## Sample Output:
+
+
+#### [PYTHON]
+```
+$ sudo python3 scapy-5-ack-scan.py
+[sudo] password for ubuntu02:
+Begin emission:
+Finished sending 1 packets.
+.*
+Received 2 packets, got 1 answers, remaining 0 packets
+(<Results: TCP:1 UDP:0 ICMP:0 Other:0>, <Unanswered: TCP:0 UDP:0 ICMP:0 Other:0>)
+```
+
+
+#### [TCPDUMP]
+
+```$ sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+[sudo] password for ubuntu02:
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
+
+21:00:20.268304 IP 10.105.130.21.20 > 1.1.1.1.443: Flags [.], ack 3215725885, win 8192, length 0
+21:00:20.268807 IP 1.1.1.1.443 > 10.105.130.21.20: Flags [R.], seq 3215725885, ack 0, win 8192, length 0
+```
+
+## Observation
+
+Notice the `[R.]` flag showing the port is un-filtered.
+
+# Alternative tools
+
+`nmap` is a popular tool being used for achieving the same functionality.
+
+### Terminal 1
+On one terminal, please find the interface being used by your machine/docker image using:
+```
+ip a s
+```
+```
+1: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:bd:05:0a brd ff:ff:ff:ff:ff:ff
+    altname enp11s0
+    inet 10.105.130.21/24 brd 10.105.130.255 scope global noprefixroute ens192
+       valid_lft forever preferred_lft forever
+    inet6 fe80::eaf4:d84d:8cca:dbe6/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+```
+
+Here the interface is `ens192`.
+
+Now run the tcpdump command using:
+
+```
+tcpdump -nni ens192 -s0  net 1.1.1.0/24
+```
+
+or if the above throws an error/permission issue:
+
+```
+sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+```
+
+### Terminal 2
+
+On another termninal, run the code:
+
+```
+nmap -sA -T4 1.1.1.1
+```
+
+or if the above throws an error/permission issue:
+
+```
+sudo nmap -sA -T4 1.1.1.1
+```
+
+## Sample Output:
+
+
+#### [NMAP]
+```
+$ sudo nmap -sA -T4 1.1.1.1
+Starting Nmap 7.80 ( https://nmap.org ) at 2022-06-02 21:42 IST
+Nmap scan report for one.one.one.one (1.1.1.1)
+Host is up (0.00052s latency).
+Not shown: 998 filtered ports
+PORT    STATE      SERVICE
+80/tcp  unfiltered http
+443/tcp unfiltered https
+```
+
+
+#### [TCPDUMP]
+
+```
+$ sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+[sudo] password for ubuntu02:
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
+
+21:00:20.268304 IP 10.105.130.21.20 > 1.1.1.1.443: Flags [.], ack 3215725885, win 8192, length 0
+21:00:20.268807 IP 1.1.1.1.443 > 10.105.130.21.20: Flags [R.], seq 3215725885, ack 0, win 8192, length 0
+21:42:58.692704 IP 10.105.130.21 > 1.1.1.1: ICMP echo request, id 37287, seq 0, length 8
+21:42:58.692744 IP 10.105.130.21.40970 > 1.1.1.1.443: Flags [S], seq 869865408, win 1024, options [mss 1460], length 0
+21:42:58.692763 IP 10.105.130.21.40970 > 1.1.1.1.80: Flags [.], ack 869865408, win 1024, length 0
+21:42:58.692779 IP 10.105.130.21 > 1.1.1.1: ICMP time stamp query id 52999 seq 0, length 20
+21:42:58.693256 IP 1.1.1.1.80 > 10.105.130.21.40970: Flags [R.], seq 1, ack 0, win 1024, length 0
+21:42:58.695580 IP 1.1.1.1.443 > 10.105.130.21.40970: Flags [S.], seq 3836754370, ack 869865409, win 65535, options [mss 1380], length 0
+21:42:58.695608 IP 10.105.130.21.40970 > 1.1.1.1.443: Flags [R], seq 869865409, win 0, length 0
+21:42:58.695705 IP 1.1.1.1 > 10.105.130.21: ICMP echo reply, id 37287, seq 0, length 8
+21:42:58.772508 IP 10.105.130.21.41226 > 1.1.1.1.199: Flags [.], ack 2841053849, win 1024, length 0
+21:42:58.772570 IP 10.105.130.21.41226 > 1.1.1.1.554: Flags [.], ack 2841053849, win 1024, length 0
+
+[so forth for other ports]
+```
+
+# Next
+Click Here: [Network Recon | ARP ping](07-Reconn-the-network-3-arp-ping.md)
