@@ -6,7 +6,7 @@ Although there are off-the-shelf softwares available for traffic generation, but
 
 So, craft away.
 
-![](./images/intro-1.png)
+![image](https://user-images.githubusercontent.com/17419002/171995471-e66806d4-5993-4b4a-bae4-9a9d4100a9d9.png)
 
 ## Prerequisites
 
