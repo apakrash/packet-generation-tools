@@ -1,0 +1,4 @@
+iputils-ping
+install net-tools
+nmap
+arping net-tools
