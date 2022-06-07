@@ -10,7 +10,7 @@ packet.display()
 #Now setting the arp op code to 2 | ARP Reply
 packet.op = 2
 
-print('-------------------\Changed the ARP code, i.e. op from who-has to is-at\n\n')
+print('-------------------\nChanged the ARP code, i.e. op from who-has to is-at\n\n')
 
 
 packet.display()
