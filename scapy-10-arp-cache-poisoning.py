@@ -10,12 +10,14 @@ packet.display()
 #Now setting the arp op code to 2 | ARP Reply
 packet.op = 2
 
-print('-------------------\nNotice the change in ARP code, i.e. op from who-has to is-at\n\n')
+print('-------------------\Changed the ARP code, i.e. op from who-has to is-at\n\n')
 
 
 packet.display()
 
 #Changing values to attack
+print('-------------------\nChanging values to attack, notice the change in other fields of ARP\n\n')
+
 
 packet.hwsrc = '11:11:11:11:11:11'
 packet.psrc = '1.1.1.1'
