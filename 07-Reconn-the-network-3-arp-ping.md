@@ -91,7 +91,7 @@ _gateway (10.105.130.1) at 6c:41:6a:c7:b8:ff [ether] on ens192
 
 # Alternative tools | 1
 
-`nmap` is a popular tool being used for achieving the same functionality.
+`nping`/`nmap` is a popular tool being used for achieving the same functionality.
 
 ### Terminal 1
 On one terminal, please find the interface being used by your machine/docker image using:
@@ -236,7 +236,7 @@ sudo arping 1.1.1.1 -c1
 ## Sample Output:
 
 
-#### [NMAP]
+#### [ARPING]
 ```
 $ sudo arping 1.1.1.1 -c1
 arping: lookup dev: No matching interface found using getifaddrs().
