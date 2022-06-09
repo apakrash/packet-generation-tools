@@ -59,7 +59,7 @@ IP / ICMP 1.1.1.1 > 10.105.130.21 echo-reply 0 / Padding
 #### [TCPDUMP]
 
 ```
-$ sudo tcpdump -nni ens192 -s0 host 1.1.1.1
+$ sudo tcpdump -nn -s0 host 1.1.1.1
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
