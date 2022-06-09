@@ -12,32 +12,16 @@ Check how your network handles malformed packet. For demonstrating we will try t
 ## Run the code
 
 ### Terminal 1
-On one terminal, please find the interface being used by your machine/docker image using:
-```
-ip a s
-```
-```
-1: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:50:56:bd:05:0a brd ff:ff:ff:ff:ff:ff
-    altname enp11s0
-    inet 10.105.130.21/24 brd 10.105.130.255 scope global noprefixroute ens192
-       valid_lft forever preferred_lft forever
-    inet6 fe80::eaf4:d84d:8cca:dbe6/64 scope link noprefixroute
-       valid_lft forever preferred_lft forever
-```
-
-Here the interface is `ens192`.
-
-Now run the tcpdump command using:
+On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nni ens192 -s0 host 192.168.1.100
+tcpdump -nn -s0 host 192.168.1.100
 ```
 
 or if the above throws an error/permission issue:
 
 ```
-sudo tcpdump -nni ens192 -s0 host 192.168.1.100
+sudo tcpdump -nn -s0 host 192.168.1.100
 ```
 
 ### Terminal 2
@@ -73,7 +57,7 @@ Sent 1 packets.
 #### [TCPDUMP]
 
 ```
-$ sudo tcpdump -nni ens192 -s0 host 192.168.1.100
+$ sudo tcpdump -nn -s0 host 192.168.1.100
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
