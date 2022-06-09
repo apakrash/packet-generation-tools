@@ -13,13 +13,7 @@ So, craft away.
 
 `Scapy`, `Tshark`, `nmap`, `arpspoof`, `arp-sk`, `arping`, `tcpdump`, `wireshark`, `p0f`, `packet 0.5`, `pypacker`, `Zeek`, `iperf`, (never ending list) are a few of tools that are completely free and immensely effective for sniffing/crafting packets.
 
-For the scope of this session we will use `python` and `scapy` to demonstrate the might of packet creation, while chiming in here and here, other tools that have similar functionality.
-
-### Specifically
-
-Python 3.x - Provided in this lab browser environment
-
-Scapy - Provided in this lab browser environment 
+For the scope of this session we will use `python` and `scapy` to demonstrate the might of packet creation, while chiming in here and there, other tools that have similar functionality.
 
 ## Experience of the Session
 There will be three stages to the session:
