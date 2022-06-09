@@ -11,7 +11,7 @@ Doing L2 Scans are possible with scapy. `srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(
 ## Run the code
 
 ### Terminal 1
-On one terminal, run the tcpdump command using:
+On one terminal, run tcpdump:
 
 ```
 tcpdump -nn -s0 arp | grep 1.1.1.1
@@ -78,7 +78,7 @@ _gateway (10.105.130.1) at 6c:41:6a:c7:b8:ff [ether] on ens192
 `nping`/`nmap` is a popular tool being used for achieving the same functionality.
 
 ### Terminal 1
-On one terminal, run the tcpdump:
+On one terminal, run tcpdump:
 
 ```
 tcpdump -nn -s0  net 1.1.1.0/24
@@ -87,7 +87,7 @@ tcpdump -nn -s0  net 1.1.1.0/24
 or if the above throws an error/permission issue:
 
 ```
-sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+sudo tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
 ### Terminal 2
@@ -137,7 +137,7 @@ Nping done: 1 IP address pinged in 4.06 seconds
 #### [TCPDUMP]
 
 ```
-$ sudo tcpdump -nni ens192 -s0 arp | grep 1.1.1.1
+$ sudo tcpdump -nn -s0 arp | grep 1.1.1.1
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -159,7 +159,7 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 `arping` is a popular tool being used for achieving the same functionality.
 
 ### Terminal 1
-On one terminal, run the tcpdump command using:
+On one terminal, run tcpdump:
 
 ```
 tcpdump -nn -s0 arp | grep 1.1.1.1
