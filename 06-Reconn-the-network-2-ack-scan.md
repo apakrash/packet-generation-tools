@@ -10,32 +10,16 @@ In the previous instance, we used the `flags='S'` for sending out TCP syn, now j
 ## Run the code
 
 ### Terminal 1
-On one terminal, please find the interface being used by your machine/docker image using:
-```
-ip a s
-```
-```
-1: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:50:56:bd:05:0a brd ff:ff:ff:ff:ff:ff
-    altname enp11s0
-    inet 10.105.130.21/24 brd 10.105.130.255 scope global noprefixroute ens192
-       valid_lft forever preferred_lft forever
-    inet6 fe80::eaf4:d84d:8cca:dbe6/64 scope link noprefixroute
-       valid_lft forever preferred_lft forever
-```
-
-Here the interface is `ens192`.
-
-Now run the tcpdump command using:
+On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nni ens192 -s0  net 1.1.1.0/24
+tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
 or if the above throws an error/permission issue:
 
 ```
-sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+sudo tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
 ### Terminal 2
@@ -70,7 +54,7 @@ Received 2 packets, got 1 answers, remaining 0 packets
 
 #### [TCPDUMP]
 
-```$ sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+```$ sudo tcpdump -nn -s0  net 1.1.1.0/24
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -88,32 +72,16 @@ Notice the `[R.]` flag showing the port is un-filtered.
 `nmap` is a popular tool being used for achieving the same functionality.
 
 ### Terminal 1
-On one terminal, please find the interface being used by your machine/docker image using:
-```
-ip a s
-```
-```
-1: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-    link/ether 00:50:56:bd:05:0a brd ff:ff:ff:ff:ff:ff
-    altname enp11s0
-    inet 10.105.130.21/24 brd 10.105.130.255 scope global noprefixroute ens192
-       valid_lft forever preferred_lft forever
-    inet6 fe80::eaf4:d84d:8cca:dbe6/64 scope link noprefixroute
-       valid_lft forever preferred_lft forever
-```
-
-Here the interface is `ens192`.
-
-Now run the tcpdump command using:
+On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nni ens192 -s0  net 1.1.1.0/24
+tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
 or if the above throws an error/permission issue:
 
 ```
-sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+sudo tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
 ### Terminal 2
@@ -149,7 +117,7 @@ PORT    STATE      SERVICE
 #### [TCPDUMP]
 
 ```
-$ sudo tcpdump -nni ens192 -s0  net 1.1.1.0/24
+$ sudo tcpdump -nn -s0  net 1.1.1.0/24
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
