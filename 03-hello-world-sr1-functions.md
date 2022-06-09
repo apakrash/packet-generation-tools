@@ -22,7 +22,7 @@ tcpdump -nn -s0 host 1.1.1.1
 or if the above throws an error/permission issue:
 
 ```
-sudo tcpdump -nni ens192 -s0 host 1.1.1.1
+sudo tcpdump -nn -s0 host 1.1.1.1
 ```
 
 ### Terminal 2
@@ -76,10 +76,17 @@ print(response_sr1.summary())
 wrpcap("response_sr1.pcap", response_sr1)
 ```
 
+
 `wrpcap("response_sr1.pcap", response_sr1)` saves packets recevied. For reference, a sample packet is saved in the repo: `response_sr1.pcap`.
 To review the file, use the command:
 ```
 tcpdump -r response_sr1.pcap
+```
+
+There is a sample file saved from the lab [in case the code did not run]:
+
+```
+tcpdump -r response_sr1-sample.pcap
 ```
 
 # Next
