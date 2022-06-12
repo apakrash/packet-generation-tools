@@ -13,24 +13,12 @@ In the previous instance, we used the `flags='S'` for sending out TCP syn, now j
 On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nn -s0  net 1.1.1.0/24
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
 ### Terminal 2
 
 On another termninal, run the code:
-
-```
-python3 scapy-5-ack-scan.py
-```
-
-or if the above throws an error/permission issue:
 
 ```
 sudo python3 scapy-5-ack-scan.py
