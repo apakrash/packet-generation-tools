@@ -63,12 +63,6 @@ Notice the `[R.]` flag showing the port is un-filtered.
 On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nn -s0  net 1.1.1.0/24
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
@@ -77,18 +71,12 @@ sudo tcpdump -nn -s0  net 1.1.1.0/24
 On another termninal, run the code:
 
 ```
-nmap -sA -T4 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo nmap -sA -T4 1.1.1.1
 ```
 
 `-sA` denotes ACK scan, similarly `-sS` denotes a syn scan
 
-`-T4` is a timing template | Range is `paranoid (0)`, `sneaky (1)`, `polite (2)`, `normal (3)`, `aggressive (4)`, and `insane (5)` | `aggressive (4)` is good for broadbadn networks.
+`-T4` is a timing template | Range is `paranoid (0)`, `sneaky (1)`, `polite (2)`, `normal (3)`, `aggressive (4)`, and `insane (5)` | `aggressive (4)` is good for broadband networks.
 
 Refer: [NMAP's man page](https://linux.die.net/man/1/nmap)
 
