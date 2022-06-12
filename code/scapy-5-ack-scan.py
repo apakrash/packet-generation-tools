@@ -6,13 +6,7 @@ from scapy.all import *
 
 #notice the change in flag
 
-#response= (sr1(IP(dst="10.197.225.120")/TCP(dport=443,flags="A")))
+print('Starting ACK scan for ip address 1.1.1.1  for port 443 \n\n')
 
-#A noticed anomaly is that sr1 waits for the packet
-
-response= (sr(IP(dst="1.1.1.1")/TCP(dport=443,flags="A")))
-
-
-#print(dir(response))
-#print(response.packetfields())
-print(response)
+response= (sr1(IP(dst="1.1.1.1")/TCP(dport=443,flags="A")))
+response.show()
