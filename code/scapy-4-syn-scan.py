@@ -1,27 +1,11 @@
-#phase: Ubutntu done 
+#phase: CL ready 
 
 from scapy.all import *
 import ipaddress # good library to work on ipaddresshandling
 import time
 
-############ Section 1: SYN scan on 1 ip ############
+############ SYN scan on 1 ip ############
 
-#uncomment to run
-'''
-response= (sr1(IP(dst="1.1.1.1")/TCP(dport=443,flags="S")))
-#print(response.packetfields())
-print(response.summary())
-print(response.show())
-print(response.show2())
-
-wrpcap("syn-scap.pcap", response)
-
-'''
-
-
-#why would we do this when we know that this can be utilized by iperf, hping or any such tool
-
-# this is not working
 ip_address = ipaddress.IPv4Address('1.1.1.1')
 print(ip_address)
 print(type(str(ip_address)))
