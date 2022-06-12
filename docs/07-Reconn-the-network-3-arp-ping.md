@@ -14,7 +14,7 @@ Doing L2 Scans are possible with scapy. `srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(
 On one terminal, run tcpdump:
 
 ```
-sudo tcpdump -nn -s0 arp | grep 1.1.1.1
+sudo tcpdump -nn -s0 arp
 ```
 
 ### Terminal 2
@@ -42,7 +42,7 @@ Received 1 packets, got 1 answers, remaining 0 packets
 #### [TCPDUMP]
 
 ```
-$ sudo tcpdump -nn -s0 arp | grep 1.1.1.1
+$ sudo tcpdump -nn -s0 arp 
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -112,7 +112,7 @@ Nping done: 1 IP address pinged in 4.06 seconds
 #### [TCPDUMP]
 
 ```
-$ sudo tcpdump -nn -s0 arp | grep 1.1.1.1
+$ sudo tcpdump -nn -s0 arp 
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -137,7 +137,7 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 On one terminal, run tcpdump:
 
 ```
-sudo tcpdump -nn -s0 arp | grep 1.1.1.1
+sudo tcpdump -nn -s0 arp 
 ```
 
 ### Terminal 2
@@ -153,7 +153,7 @@ arping 1.1.1.1 -c1 -I $(route | grep '^default' | grep -o '[^ ]*$')
 
 #### [ARPING]
 ```
-$ sudo arping 1.1.1.1 -c1
+$ arping 1.1.1.1 -c1 -I $(route | grep '^default' | grep -o '[^ ]*$')
 arping: lookup dev: No matching interface found using getifaddrs().
 arping: Unable to automatically find interface to use. Is it on the local LAN?
 arping: Use -i to manually specify interface. Guessing interface ens192.
@@ -164,7 +164,7 @@ ARPING 1.1.1.1
 #### [TCPDUMP]
 
 ```
-$ sudo tcpdump -nn -s0 arp | grep 1.1.1.1
+$ sudo tcpdump -nn -s0 arp
 [sudo] password for ubuntu02:
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
