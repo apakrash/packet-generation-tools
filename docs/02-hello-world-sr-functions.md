@@ -10,6 +10,8 @@ This is the heart of scapy. As the name can be seen as an acronym for send/respo
 
 Please notice that here ICMP() is the protocol being used, similarly we will see other protocols' usage later in the session.
 
+`sr(IP(dst="1.1.1.1")/ICMP())` is the syntax for sending an `ICMP` packet to `1.1.1.1`
+
 ## Run the code
 
 ### Terminal 1
