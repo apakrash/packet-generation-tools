@@ -1,6 +1,8 @@
 # Attack/Test your network
 
-![image](https://user-images.githubusercontent.com/17419002/171995583-fd060cfa-c17a-40f9-8f25-58006e7e06b5.png)
+<p align="left">
+<img src="https://user-images.githubusercontent.com/17419002/171995583-fd060cfa-c17a-40f9-8f25-58006e7e06b5.png" width="40%" height="40%" />
+</p>
 
 
 ## Malformed Packet
@@ -8,6 +10,8 @@
 `IP Null Payload Attack` `LAND Attack` `Smurf Attack` `Nestea/Teardrop Attack`
 
 Check how your network handles malformed packet. For demonstrating we will try to recreate [Nestea/Teardrop](https://community.cisco.com/t5/security-documents/how-to-configure-the-router-to-minimize-a-denial-of-service-dos/ta-p/3117624) attack by sending malformed packets (to a hopefully non-existent host on the network)
+
+`send()` is method of Python's socket class which is used to send data from one socket to another socket. | [send()|Python Docs](https://docs.python.org/3/library/socket.html)
 
 ## Run the code
 
