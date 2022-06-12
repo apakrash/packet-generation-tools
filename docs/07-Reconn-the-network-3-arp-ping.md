@@ -14,12 +14,6 @@ Doing L2 Scans are possible with scapy. `srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(
 On one terminal, run tcpdump:
 
 ```
-tcpdump -nn -s0 arp | grep 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0 arp | grep 1.1.1.1
 ```
 
@@ -28,15 +22,8 @@ sudo tcpdump -nn -s0 arp | grep 1.1.1.1
 On another termninal, run the code:
 
 ```
-python3 scapy-6-ARP-ping.py
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo python3 scapy-6-ARP-ping.py
 ```
-
 
 ## Sample Output:
 
@@ -81,24 +68,12 @@ _gateway (10.105.130.1) at 6c:41:6a:c7:b8:ff [ether] on ens192
 On one terminal, run tcpdump:
 
 ```
-tcpdump -nn -s0  net 1.1.1.0/24
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0  net 1.1.1.0/24
 ```
 
 ### Terminal 2
 
 On another termninal, run the code:
-
-```
-nping --arp-type ARP 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
 
 ```
 sudo nping --arp-type ARP 1.1.1.1
@@ -162,12 +137,6 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 On one terminal, run tcpdump:
 
 ```
-tcpdump -nn -s0 arp | grep 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0 arp | grep 1.1.1.1
 ```
 
@@ -176,13 +145,7 @@ sudo tcpdump -nn -s0 arp | grep 1.1.1.1
 On another termninal, run the code:
 
 ```
-arping 1.1.1.1 -c1
-```
-
-or if the above throws an error/permission issue:
-
-```
-sudo arping 1.1.1.1 -c1
+arping 1.1.1.1 -c1 -I $(route | grep '^default' | grep -o '[^ ]*$')
 ```
 
 ## Sample Output:
