@@ -17,7 +17,7 @@ In this code, the arp packet is crafted and the attributes are changed step by s
 On one terminal, run the tcpdump command using:
 
 ```
-sudo tcpdump -nn -s0 arp | grep 1.1.1.1
+sudo tcpdump -nn -s0 arp
 ```
 
 ### Terminal 2
@@ -89,7 +89,7 @@ Sent 1 packets.
 It takes a few seconds to show up the packets depending how much arp packets are coming to the box.
 
 ```
-$ sudo tcpdump -nn -s0 arp | grep 1.1.1.1
+$ sudo tcpdump -nn -s0 arp
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 04:56:29.792206 ARP, Reply 1.1.1.1 is-at 11:11:11:11:11:11, length 28
