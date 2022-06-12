@@ -6,9 +6,11 @@
 
 ### `srloop()`
 
-As the name gives it away, send a packet at layer 3 in loop and print the answer each time. What do you think is the difference between running srloop() and running sr() or sr1() multiple times?
+As the name gives it away, send a packet at layer 3 in loop and print the answer each time. What do you think is the difference between running srloop() and running sr() or sr1() multiple times? 
 
-Please notice that here ICMP() is the protocol being used, similarly we will see other protocols' usage later in the session.
+`srloop` sends the same packet over and over, while `sr`/`sr1` packets can be changed with each loop. 
+
+`srloop(IP(dst="1.1.1.1")/ICMP(), count=2)` is the syntax to send `ICMP` packets, twice to `1.1.1`
 
 ## Run the code
 
