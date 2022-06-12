@@ -9,6 +9,8 @@
 
 L2 attacks are not un-common in the network. Poisoning the ARP cache of a client for an attacker to be sent all packets to the attacker. With scapy it is incredibly simple to execute this attack.
 
+In this code, the arp packet is crafted and the attributes are changed step by step.
+
 ## Run the code
 
 ### Terminal 1
