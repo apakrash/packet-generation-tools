@@ -23,7 +23,7 @@ There will be three stages:
 * Network Reconnaissance | First Steps to fortify the network!
 * Network Attacks | The good stuff :)
 
-Whenever sending a crafted packet, there will be tcpdump commands shared with the code snippets, please run them on another console/cmd session parallelly to experience the packet flow in real time. A corporally to this is whenever possible, the packets are saved and use tcpdump -r filename.pcap to check the captured packets.
+Whenever sending a crafted packet, there will be `tcpdump commands`  shared with the code snippets, please run them on another console/cmd session parallelly to experience the packet flow in real time. A corporally to this is whenever possible, the packets are saved and use `tcpdump -r filename.pcap` to check the captured packets.
 
 Wherever possible, there are samples presented of the captures taken in a lab setting for your reference
 	
