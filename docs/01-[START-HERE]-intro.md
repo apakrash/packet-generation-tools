@@ -17,7 +17,7 @@ For the scope of this session we will use `python` and `scapy` to demonstrate th
 We will install all that is necessary in the next step.
 
 ## Experience of the Session
-There will be three stages to the session:
+There will be three stages:
          
 * Understanding the fundamentals of Scapy | What is it? | How do I run it
 * Network Reconnaissance | First Steps to fortify the network!
