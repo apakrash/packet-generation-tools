@@ -16,12 +16,6 @@ The syntax remain the same as `sr()`, the name of te function changes to `sr1()`
 On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nn -s0 host 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0 host 1.1.1.1
 ```
 
@@ -34,12 +28,6 @@ cat scapy-1-2-sr1.py
 ```
 
 Thereafter, run the code:
-
-```
-python3 scapy-1-2-sr1.py
-```
-
-or if the above throws an error/permission issue:
 
 ```
 sudo python3 scapy-1-2-sr1.py
