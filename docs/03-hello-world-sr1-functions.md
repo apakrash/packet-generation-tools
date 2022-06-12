@@ -5,7 +5,7 @@
 
 ### `sr1()`
 
-The sr1() function for getting 1 response packet back
+The sr1() function returns **1 response packet** back
 
 Please notice that here ICMP() is the protocol being used, similarly we will see other protocols' usage later in the session.
 
