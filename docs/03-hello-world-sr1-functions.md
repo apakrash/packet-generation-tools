@@ -8,8 +8,7 @@
 
 The sr1() function returns **1 response packet** back
 
-Please notice that here ICMP() is the protocol being used, similarly we will see other protocols' usage later in the session.
-
+The syntax remain the same as `sr()`, the name of te function changes to `sr1()`
 
 ## Run the code
 
@@ -28,7 +27,13 @@ sudo tcpdump -nn -s0 host 1.1.1.1
 
 ### Terminal 2
 
-On another termninal, run the code:
+On another termninal, check the code:
+
+```
+cat scapy-1-2-sr1.py
+```
+
+Thereafter, run the code:
 
 ```
 python3 scapy-1-2-sr1.py
