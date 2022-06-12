@@ -18,12 +18,6 @@ Please notice that here ICMP() is the protocol being used, similarly we will see
 On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nn -s0 host 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0 host 1.1.1.1
 ```
 
@@ -36,12 +30,6 @@ cat scapy-1-1-sr.py
 ```
 
 Thereafter, run the code:
-
-```
-python3 scapy-1-1-sr.py
-```
-
-or if the above throws an error/permission issue:
 
 ```
 sudo python3 scapy-1-1-sr.py
@@ -62,7 +50,6 @@ Finished sending 1 packets.
 Received 2 packets, got 1 answers, remaining 0 packets
 (<Results: TCP:0 UDP:0 ICMP:1 Other:0>, <Unanswered: TCP:0 UDP:0 ICMP:0 Other:0>)
 ```
-
 
 #### [TCPDUMP]
 
