@@ -17,24 +17,12 @@ In this code, the arp packet is crafted and the attributes are changed step by s
 On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nn -s0 arp | grep 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0 arp | grep 1.1.1.1
 ```
 
 ### Terminal 2
 
 On another termninal, run the code:
-
-```
-python3 scapy-10-arp-cache-poisoning.py
-```
-
-or if the above throws an error/permission issue:
 
 ```
 sudo python3 scapy-10-arp-cache-poisoning.py
