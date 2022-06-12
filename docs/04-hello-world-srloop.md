@@ -22,24 +22,12 @@ What do you think is the difference between running srloop() and running sr() or
 On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nn -s0 host 1.1.1.1
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0 host 1.1.1.1
 ```
 
 ### Terminal 2
 
 On another termninal, run the code:
-
-```
-python3 scapy-1-3-srloop.py
-```
-
-or if the above throws an error/permission issue:
 
 ```
 sudo python3 scapy-1-3-srloop.py
