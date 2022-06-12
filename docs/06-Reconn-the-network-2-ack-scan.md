@@ -98,6 +98,13 @@ or if the above throws an error/permission issue:
 sudo nmap -sA -T4 1.1.1.1
 ```
 
+`-sA` denotes ACK scan, similarly `-sS` denotes a syn scan
+
+`-T4` is a timing template | Range is `paranoid (0)`, `sneaky (1)`, `polite (2)`, `normal (3)`, `aggressive (4)`, and `insane (5)` | `aggressive (4)` is good for broadbadn networks.
+
+Refer: [NMAP's man page](https://linux.die.net/man/1/nmap)
+
+
 ## Sample Output:
 
 
