@@ -19,24 +19,12 @@ Check how your network handles malformed packet. For demonstrating we will try t
 On one terminal, run the tcpdump command using:
 
 ```
-tcpdump -nn -s0 host 192.168.1.100
-```
-
-or if the above throws an error/permission issue:
-
-```
 sudo tcpdump -nn -s0 host 192.168.1.100
 ```
 
 ### Terminal 2
 
 On another termninal, run the code:
-
-```
-python3 scapy-7-1-malformed-packet.py
-```
-
-or if the above throws an error/permission issue:
 
 ```
 sudo python3 scapy-7-1-malformed-packet.py
