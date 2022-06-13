@@ -68,4 +68,3 @@ if __name__ == '__main__':
     os.remove("ingress.txt")
     os.remove("egress.txt")
     
-    #return '\nPlease scroll to the bottom for the total latency output'
