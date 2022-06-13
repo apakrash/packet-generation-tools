@@ -15,7 +15,7 @@
 * [SecDev Attack Repo](https://github.com/secdev/awesome-scapy)
 * [Attack Repo](https://github.com/GrigorDimitrov/ScapyAttacks)
 * [SSL/TLS support](https://github.com/tintinweb/scapy-ssl_tls)
-* [Superset](https://github.com/topics/scapy?o=desc&s=stars)
+* [Superset | Repo list](https://github.com/topics/scapy?o=desc&s=stars) 
 
 ## Limitations of Scapy
 
