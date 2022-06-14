@@ -111,5 +111,4 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 Notice how the `[S.]` i.e. SYN ACK packet shows that the TCP port is open on that ip address.
 
 
-# Next
-Click Here: [Recon | ACK Scan](06-Reconn-the-network-2-ack-scan.md)
+# Next | [Recon | ACK Scan](06-Reconn-the-network-2-ack-scan.md)
