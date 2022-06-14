@@ -64,5 +64,4 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 
 Notice the how tcpdump shows that the packet contains invalid/malformed information.
 
-# Next
-Click Here: [ARP Spoof Attack](09-Attack-02-ARP-Spoof.md)
+# Next | [ARP Spoof Attack](09-Attack-02-ARP-Spoof.md)
