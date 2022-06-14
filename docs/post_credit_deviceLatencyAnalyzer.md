@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/17419002/173512743-0f08e2d6-930f-44aa-bf26-55f9747d7c14.png)
 
+<sub>Image Credit: cyberhoot.com/</sub>
+
 This code takes input the ingress and egress packet captures and computes how much latency is introduced by the device.
 
 ## Run the code
