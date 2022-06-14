@@ -1,5 +1,4 @@
 __author__ = "Nikhil Alampalli Ramu", "Abhishek Pakrashi", "Raghunath Kulkarni"
-__email__ = "nalampal@cisco.com", "apakrash@cisco.com", "raghukul@cisco.com"
 __status__ = "beta testing"
 
 
