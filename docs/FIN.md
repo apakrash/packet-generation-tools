@@ -1,6 +1,8 @@
 # Looking Ahead
 
 ![image](https://user-images.githubusercontent.com/17419002/173438124-2156ae02-b083-4a6c-9bf2-1c027cef77e5.png)
+<sub>Image Credit: unsplash.com</sub>
+
 
 ## Scapy features: 
 * [Sniffing](https://scapy.readthedocs.io/en/latest/usage.html#sniffing) | [Limitations and Mitigation](https://scapy.readthedocs.io/en/latest/usage.html#performance-of-scapy)
