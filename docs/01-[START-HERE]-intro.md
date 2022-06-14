@@ -30,5 +30,4 @@ Wherever possible, there are samples presented of the captures taken in a lab se
 	
 Happy crafting.
 
-# Next
-Click Here: [Setup your environment](01.5-environment-setup.md)
+# Next | [Setup your environment](01.5-environment-setup.md)
