@@ -86,5 +86,4 @@ There is a sample file saved from the lab [in case the code did not run]:
 tcpdump -r response_sr1-sample.pcap
 ```
 
-# Next
-Click Here: [Scapy Basics | srloop()](04-hello-world-srloop.md)
+# Next | [Scapy Basics | srloop()](04-hello-world-srloop.md)
