@@ -102,5 +102,4 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 
 This attack needs to be performed with sniffer and will be effective only if the attack packets reach after the original host replies overwriting the actual ip-mac binding on the target computer.
 
-# Next
-Click Here: [Last Page](FIN.md)
+# Next | [Last Page](FIN.md)
