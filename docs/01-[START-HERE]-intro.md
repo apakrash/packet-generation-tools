@@ -1,6 +1,6 @@
 # Introduction
 
-Packet generation has been the present in networking for a long time and with the advent of cloud computing, Infrastructure as Code, CI/CD pipelines, automating packet generation for network audit and resiliency testing need has increased more than ever.
+Packet generation has been there in networking for a long time and with the advent of cloud computing, Infrastructure as Code, CI/CD pipelines, automating packet generation for network audit and resiliency testing need has increased more than ever.
 
 Although there is off-the-shelf software available for traffic generation, they incorporate a massive technical debt for learning and implementing a custom solution. In comparison open-source tools are very easy to learn, incorporate in your daily automation pipeline, or just plainly generate packets.
 
