@@ -10,7 +10,6 @@
 
 Doing L2 Scans are possible with scapy. `srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst="1.1.1.1/32"), timeout=2)` is used to check for the MAC address for which packet destined to `1.1.1.1` should be sent.
 
-[But `1.1.1.1` is not in the local network, what mac address should the packets be sent to?]
 
 ## Run the code
 
@@ -56,7 +55,8 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 
 ## Observation
 
-Notice that mac address returned for `1.1.1.1` is the gateway's mac address. To verify the mac address of the gateway, use `arp -a` 
+Use any ip address in the local network/broadcast domain to get a valid answer. To verify the arp table on the device, use `arp -a`
+Also notice that scapy is not intuitive to arp for the default gateway if the ip address is not in the same subnet.
 
 ### Sample Output
 ```
