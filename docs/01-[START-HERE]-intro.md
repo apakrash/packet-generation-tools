@@ -8,7 +8,7 @@ Although there is off-the-shelf software available for traffic generation, they 
 So, craft away.
 
 ![image](https://user-images.githubusercontent.com/17419002/171995471-e66806d4-5993-4b4a-bae4-9a9d4100a9d9.png)
-<sub>Image Credit: Marvel.com</sub>
+<sub>Image Credit: marvel.com</sub>
 
 ## Prerequisites
 
