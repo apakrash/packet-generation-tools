@@ -6,7 +6,7 @@
 
 ### `srloop()`
 
-As the name gives it away, send a packet at layer 3 in loop and print the answer each time. 
+As the name gives it away, send a packet at layer 3 in loop after each response is received. 
 
 What do you think is the difference between running srloop() and running sr() or sr1() multiple times? 
 
