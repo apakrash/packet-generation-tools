@@ -124,5 +124,4 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 [so forth for other ports]
 ```
 
-# Next
-Click Here: [Network Recon | ARP ping](07-Reconn-the-network-3-arp-ping.md)
+# Next | [Network Recon | ARP ping](07-Reconn-the-network-3-arp-ping.md)
