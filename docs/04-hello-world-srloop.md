@@ -3,7 +3,7 @@
 <p align="left">
 <img src="https://user-images.githubusercontent.com/17419002/171995490-aa393b55-b0c8-4003-a0ea-b1fcbfa49809.png" width="40%" height="40%" />
 
-  <sub>Credits:Unsplash.com</sub>
+<sub>Image Credit: dev.to</sub>
 
 </p>
 
