@@ -63,5 +63,4 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 17:22:32.305151 IP 10.105.130.21 > 1.1.1.1: ICMP echo request, id 0, seq 0, length 8
 17:22:32.307671 IP 1.1.1.1 > 10.105.130.21: ICMP echo reply, id 0, seq 0, length 8
 ```
-# Next
-Click Here: [Executing Network Reconnaissance](05-Reconn-the-network-1-syn-scan.md)
+# Next | [Executing Network Reconnaissance](05-Reconn-the-network-1-syn-scan.md)
