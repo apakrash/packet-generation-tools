@@ -176,5 +176,4 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 12:54:43.213416 ARP, Reply 1.1.1.1 is-at 6c:41:6a:c7:b8:ff, length 46
 ```
 
-# Next
-Click Here: [Executing Network Attacks](08-Attack-01-malformed-packet.md)
+# Next | [Executing Network Attacks](08-Attack-01-malformed-packet.md)
