@@ -66,5 +66,4 @@ listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
 20:54:30.891062 IP 1.1.1.1 > 10.105.130.21: ICMP echo reply, id 0, seq 0, length 8
 ```
 
-# Next
-Click Here: [Scapy Basics | sr1()](03-hello-world-sr1-functions.md)
+# Next | [Scapy Basics | sr1()](03-hello-world-sr1-functions.md)
