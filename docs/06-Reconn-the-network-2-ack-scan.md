@@ -2,6 +2,9 @@
 
 ![image](https://user-images.githubusercontent.com/17419002/171995543-455fc70f-3e5d-40bb-bf26-5a284863670e.png)
 
+<sub>Image Credit: cyberhoot.com/</sub>
+
+
 ## ACK Scan
 
 In the previous instance, we used the `flags='S'` for sending out TCP syn, now just chaging this parameter, an ack scan can be done for the network using `flags='A'`
